@@ -398,6 +398,7 @@ function array_unique(int $flags = \SORT_STRING): Closure
     }
 
     return function (array $array) use ($flags): array {
+        /** @phpstan-ignore-next-line */
         return \array_unique($array, $flags);
     };
 }
@@ -472,6 +473,7 @@ function if_else(callable $predicate, callable $then, callable $else): Closure
 function implode(string $separator = ""): Closure
 {
     return function (array $array) use ($separator): string {
+        /** @phpstan-ignore-next-line */
         return \implode($separator, $array);
     };
 }
@@ -1038,6 +1040,7 @@ function preg_replace(string|array $pattern, string|array $replacement, int $lim
 function rsort(int $flags = SORT_REGULAR): Closure
 {
     return function (array $array) use ($flags): array {
+        /** @phpstan-ignore-next-line */
         \rsort($array, $flags);
         return $array;
     };
@@ -1052,6 +1055,7 @@ function rsort(int $flags = SORT_REGULAR): Closure
 function sort(int $flags = SORT_REGULAR): Closure
 {
     return function (array $array) use ($flags): array {
+        /** @phpstan-ignore-next-line */
         \sort($array, $flags);
         return $array;
     };
